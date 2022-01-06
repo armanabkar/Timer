@@ -10,7 +10,6 @@ import AVFoundation
 
 struct CircularProgressView: View {
     
-    @AppStorage("SelectedSystemSound") private var sound: SystemSounds.ID = 1005
     @EnvironmentObject private var model: CountdownModel
     
     var body: some View {
@@ -29,10 +28,10 @@ struct CircularProgressView: View {
             .overlay(
                 Circle()
                     .trim(from: 0, to: model.progress)
-                    .stroke(style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin:.round))
+                    .stroke(style: StrokeStyle(lineWidth: 8, lineCap: .round, lineJoin:.round))
                     .rotationEffect(.degrees(-90))
-                    .foregroundColor(Color(model.completed(with: sound) ? .systemGreen : .systemOrange))
-                    .animation(.easeInOut(duration: 0.2))
+                    .foregroundColor(Color(model.completed() ? .systemGreen : .systemOrange))
+                    .animation(.easeInOut(duration: 0.2), value: model.progress)
             )
     }
 }

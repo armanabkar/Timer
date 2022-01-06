@@ -28,7 +28,9 @@ struct ContentView: View {
                         CircleButton(style: .reset)
                     }
                     .buttonStyle(.borderless)
+                    
                     Spacer()
+                    
                     Button(action: { model.playPauseAction() }) {
                         CircleButton(style: model.isRunning ? .pause : .start)
                     }
@@ -58,6 +60,9 @@ struct ContentView: View {
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(maxWidth: 200)
+            }
+            .onReceive(model.timer) { time in
+                model.receiveTimerUpdate()
             }
             .padding(.vertical, 50)
         }

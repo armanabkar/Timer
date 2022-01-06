@@ -8,25 +8,17 @@
 import SwiftUI
 import AVFoundation
 
-class CountdownModel: ObservableObject {
-    
-    // MARK: - Publishers
-    
+final class CountdownModel: ObservableObject {
+        
     @Published var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
-    @Published var sounds = SystemSounds.all
     @Published var counter: CGFloat = 0.0
     @Published var duration: CGFloat = 0.1
     @Published var storedDuration: CGFloat = 0.1
-    
     @Published var selectedHours = 0
     @Published var selectedMinutes = 0
     @Published var selectedSeconds = 0
-    
     @Published var isRunning = false
-    
-    // MARK: - Properties
-    
+        
     var progress: CGFloat {
         (counter / duration)
     }
@@ -39,10 +31,12 @@ class CountdownModel: ObservableObject {
         return formatter.string(from: TimeInterval(duration - counter)) ?? "00:00:00"
     }
     
-    // MARK: - Methods
+    private var audioPlayer: AVAudioPlayer?
     
-    func completed(with sound: SystemSounds.ID) -> Bool {
-        AudioServicesPlaySystemSound(SystemSoundID(progress == 1 && isRunning ? sound : 0))
+    func completed() -> Bool {
+        if isRunning {
+            playSound(sound: "radar-sound", type: "mp3")
+        }
         return progress == 1
     }
     
@@ -58,11 +52,8 @@ class CountdownModel: ObservableObject {
         timeInSeconds()
     }
     
-    func previewAudio(_ tag: SystemSounds.ID) {
-        AudioServicesPlaySystemSound(SystemSoundID(tag))
-    }
-    
     func resetTimer() {
+        audioPlayer?.stop()
         isRunning = false
         duration = storedDuration
         counter = 0
@@ -85,4 +76,16 @@ class CountdownModel: ObservableObject {
         isRunning.toggle()
         timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     }
+    
+    private func playSound(sound: String, type: String) {
+        if let path = Bundle.main.path(forResource: sound, ofType: type) {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                audioPlayer?.play()
+            } catch {
+                print("ERROR")
+            }
+        }
+    }
+
 }
