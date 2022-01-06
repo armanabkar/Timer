@@ -16,8 +16,8 @@ struct CircularProgressView: View {
     var body: some View {
         Circle()
             .fill(Color.clear)
-            .frame(width: 420, height: 420)
-            .overlay(Circle().stroke(lineWidth: 12))
+            .frame(width: 210, height: 210)
+            .overlay(Circle().stroke(lineWidth: 8))
             .foregroundColor(.white)
             .overlay(overlayCircle)
     }
@@ -25,7 +25,7 @@ struct CircularProgressView: View {
     private var overlayCircle: some View {
         Circle()
             .fill(Color.clear)
-            .frame(width: 420, height: 420)
+            .frame(width: 210, height: 210)
             .overlay(
                 Circle()
                     .trim(from: 0, to: model.progress)

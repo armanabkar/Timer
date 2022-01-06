@@ -15,7 +15,7 @@ struct ClockView: View {
         VStack {
             Text(model.timeFormatter)
                 .foregroundColor(.white)
-                .font(.system(size: 66, weight: .bold, design: .default))
+                .font(.system(size: 33, weight: .bold, design: .default))
                 .fontWeight(.bold)
         }
     }

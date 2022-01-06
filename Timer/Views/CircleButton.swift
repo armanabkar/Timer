@@ -54,14 +54,14 @@ struct CircleButton: View {
         ZStack {
             Circle()
                 .stroke(style.fillColor, lineWidth: 1)
-                .frame(width: 120, height: 120)
+                .frame(width: 60, height: 60)
             
             Circle()
                 .fill(style.fillColor)
-                .frame(width: 113, height: 113)
+                .frame(width: 55, height: 55)
                 .overlay(
                     Text(style.title)
-                        .font(.largeTitle)
+                        .font(.callout)
                         .fontWeight(.semibold)
                         .foregroundColor(style.foregroundColor)
                 )
