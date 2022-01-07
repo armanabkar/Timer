@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F028DF022786E68100BBD316 /* radar-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F028DF012786E68100BBD316 /* radar-sound.mp3 */; };
+		F028DF042787220E00BBD316 /* radar-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F028DF032787220E00BBD316 /* radar-sound.mp3 */; };
 		F06743302781FC6F00488A5C /* TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067432F2781FC6F00488A5C /* TimerApp.swift */; };
 		F06743322781FC6F00488A5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06743312781FC6F00488A5C /* ContentView.swift */; };
 		F06743342781FC7000488A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F06743332781FC7000488A5C /* Assets.xcassets */; };
@@ -17,11 +17,10 @@
 		F06743442783252800488A5C /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06743432783252800488A5C /* ClockView.swift */; };
 		F06743492783257F00488A5C /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06743482783257F00488A5C /* Binding+Extension.swift */; };
 		F067434B278325A300488A5C /* CountdownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067434A278325A200488A5C /* CountdownModel.swift */; };
-		F067434E278325C900488A5C /* SystemSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067434D278325C900488A5C /* SystemSounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F028DF012786E68100BBD316 /* radar-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "radar-sound.mp3"; sourceTree = "<group>"; };
+		F028DF032787220E00BBD316 /* radar-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "radar-sound.mp3"; sourceTree = "<group>"; };
 		F067432C2781FC6F00488A5C /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F067432F2781FC6F00488A5C /* TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApp.swift; sourceTree = "<group>"; };
 		F06743312781FC6F00488A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,7 +32,6 @@
 		F06743432783252800488A5C /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		F06743482783257F00488A5C /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 		F067434A278325A200488A5C /* CountdownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownModel.swift; sourceTree = "<group>"; };
-		F067434D278325C900488A5C /* SystemSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +48,7 @@
 		F028DF002786E5EE00BBD316 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				F028DF012786E68100BBD316 /* radar-sound.mp3 */,
+				F028DF032787220E00BBD316 /* radar-sound.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -115,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				F067434A278325A200488A5C /* CountdownModel.swift */,
-				F067434D278325C900488A5C /* SystemSounds.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06743372781FC7000488A5C /* Preview Assets.xcassets in Resources */,
-				F028DF022786E68100BBD316 /* radar-sound.mp3 in Resources */,
+				F028DF042787220E00BBD316 /* radar-sound.mp3 in Resources */,
 				F06743342781FC7000488A5C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,7 +200,6 @@
 			files = (
 				F0674340278324FB00488A5C /* CircleButton.swift in Sources */,
 				F067434B278325A300488A5C /* CountdownModel.swift in Sources */,
-				F067434E278325C900488A5C /* SystemSounds.swift in Sources */,
 				F06743442783252800488A5C /* ClockView.swift in Sources */,
 				F06743322781FC6F00488A5C /* ContentView.swift in Sources */,
 				F06743422783251000488A5C /* CircularProgressView.swift in Sources */,
@@ -339,7 +335,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timer/App/Timer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Timer/Preview Content\"";
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -352,7 +348,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -369,7 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timer/App/Timer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Timer/Preview Content\"";
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -382,7 +378,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

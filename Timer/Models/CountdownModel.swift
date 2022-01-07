@@ -18,6 +18,9 @@ final class CountdownModel: ObservableObject {
     @Published var selectedMinutes = 0
     @Published var selectedSeconds = 0
     @Published var isRunning = false
+    @Published var hours = [Int](0...23)
+    @Published var minutes = [Int](0...59)
+    @Published var seconds = [Int](0...59)
         
     var progress: CGFloat {
         (counter / duration)
@@ -34,13 +37,19 @@ final class CountdownModel: ObservableObject {
     private var audioPlayer: AVAudioPlayer?
     
     func completed() -> Bool {
-        if isRunning {
+        if isRunning && progress == 1 {
             playSound(sound: "radar-sound", type: "mp3")
+            DispatchQueue.main.async {
+                if let window = NSApplication.shared.windows.last {
+                    NSApplication.shared.activate(ignoringOtherApps: true)
+                    window.makeKeyAndOrderFront(self)
+                }
+            }
         }
         return progress == 1
     }
     
-    func timeInSeconds() {
+    func updateTimer(_ tag: Int) {
         let hours = selectedHours * 3600
         let minutes = selectedMinutes * 60
         let seconds = selectedSeconds
@@ -48,15 +57,14 @@ final class CountdownModel: ObservableObject {
         duration = CGFloat(hours + minutes + seconds)
     }
     
-    func updateTimer(_ tag: Int) {
-        timeInSeconds()
-    }
-    
     func resetTimer() {
         audioPlayer?.stop()
         isRunning = false
         duration = storedDuration
         counter = 0
+        selectedHours = 0
+        selectedMinutes = 0
+        selectedSeconds = 0
     }
     
     func receiveTimerUpdate() {
@@ -83,7 +91,7 @@ final class CountdownModel: ObservableObject {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 audioPlayer?.play()
             } catch {
-                print("ERROR")
+                print(error)
             }
         }
     }
