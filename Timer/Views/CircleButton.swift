@@ -9,6 +9,26 @@ import SwiftUI
 
 struct CircleButton: View {
     
+    var style: ButtonStyle
+    
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(style.fillColor, lineWidth: 1)
+                .frame(width: 60, height: 60)
+            
+            Circle()
+                .fill(style.fillColor)
+                .frame(width: 55, height: 55)
+                .overlay(
+                    Text(style.title)
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                        .foregroundColor(style.foregroundColor)
+                )
+        }
+    }
+    
     enum ButtonStyle {
         case start
         case pause
@@ -48,25 +68,6 @@ struct CircleButton: View {
         }
     }
     
-    var style: ButtonStyle
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .stroke(style.fillColor, lineWidth: 1)
-                .frame(width: 60, height: 60)
-            
-            Circle()
-                .fill(style.fillColor)
-                .frame(width: 55, height: 55)
-                .overlay(
-                    Text(style.title)
-                        .font(.callout)
-                        .fontWeight(.semibold)
-                        .foregroundColor(style.foregroundColor)
-                )
-        }
-    }
 }
 
 struct CapsuleButton_Previews: PreviewProvider {
