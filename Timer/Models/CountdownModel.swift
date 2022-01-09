@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 final class CountdownModel: ObservableObject {
-        
+    
     @Published var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @Published var counter: CGFloat = 0.0
     @Published var duration: CGFloat = 0.1
@@ -18,10 +18,11 @@ final class CountdownModel: ObservableObject {
     @Published var selectedMinutes = 0
     @Published var selectedSeconds = 0
     @Published var isRunning = false
+    @Published var isMuted = false
     @Published var hours = [Int](0...23)
     @Published var minutes = [Int](0...59)
     @Published var seconds = [Int](0...59)
-        
+    
     var progress: CGFloat {
         (counter / duration)
     }
@@ -34,14 +35,13 @@ final class CountdownModel: ObservableObject {
         return formatter.string(from: TimeInterval(duration - counter)) ?? "00:00:00"
     }
     
-    private var audioPlayer: AVAudioPlayer?
-    
     func completed() -> Bool {
         if isRunning && progress == 1 {
-            playSound(sound: "radar-sound", type: "mp3")
             DispatchQueue.main.async {
+                if !self.isMuted { self.playSound(sound: "radar-sound", type: "mp3") }
                 if let window = NSApplication.shared.windows.last {
                     NSApplication.shared.activate(ignoringOtherApps: true)
+                    window.deminiaturize(self)
                     window.makeKeyAndOrderFront(self)
                 }
             }
@@ -85,15 +85,15 @@ final class CountdownModel: ObservableObject {
         timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     }
     
+    private var audioPlayer: AVAudioPlayer?
+    
     private func playSound(sound: String, type: String) {
         if let path = Bundle.main.path(forResource: sound, ofType: type) {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 audioPlayer?.play()
-            } catch {
-                print(error)
-            }
+            } catch { }
         }
     }
-
+    
 }
