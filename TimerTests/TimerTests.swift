@@ -27,11 +27,5 @@ class TimerTests: XCTestCase {
         XCTAssertNotNil(app.body)
         return app
     }
-    
-    func testPerformanceExample() throws {
-        measure {
-            // XCUIApplication().launch()
-        }
-    }
 
 }

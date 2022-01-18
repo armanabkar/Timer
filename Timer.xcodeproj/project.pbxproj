@@ -10,6 +10,8 @@
 		F028DF042787220E00BBD316 /* radar-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F028DF032787220E00BBD316 /* radar-sound.mp3 */; };
 		F028DF0C27888A4D00BBD316 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028DF0B27888A4D00BBD316 /* TimerTests.swift */; };
 		F028DF1327888A7300BBD316 /* CountdownModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028DF1227888A7300BBD316 /* CountdownModelTests.swift */; };
+		F028DF1D278ECC9500BBD316 /* TimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028DF1C278ECC9500BBD316 /* TimerUITests.swift */; };
+		F028DF1F278ECC9500BBD316 /* TimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028DF1E278ECC9500BBD316 /* TimerUITestsLaunchTests.swift */; };
 		F06743302781FC6F00488A5C /* TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067432F2781FC6F00488A5C /* TimerApp.swift */; };
 		F06743322781FC6F00488A5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06743312781FC6F00488A5C /* ContentView.swift */; };
 		F06743342781FC7000488A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F06743332781FC7000488A5C /* Assets.xcassets */; };
@@ -29,6 +31,13 @@
 			remoteGlobalIDString = F067432B2781FC6F00488A5C;
 			remoteInfo = Timer;
 		};
+		F028DF20278ECC9500BBD316 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F06743242781FC6F00488A5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F067432B2781FC6F00488A5C;
+			remoteInfo = Timer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +45,9 @@
 		F028DF0927888A4D00BBD316 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F028DF0B27888A4D00BBD316 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		F028DF1227888A7300BBD316 /* CountdownModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownModelTests.swift; sourceTree = "<group>"; };
+		F028DF1A278ECC9500BBD316 /* TimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F028DF1C278ECC9500BBD316 /* TimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUITests.swift; sourceTree = "<group>"; };
+		F028DF1E278ECC9500BBD316 /* TimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F067432C2781FC6F00488A5C /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F067432F2781FC6F00488A5C /* TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerApp.swift; sourceTree = "<group>"; };
 		F06743312781FC6F00488A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +63,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		F028DF0627888A4D00BBD316 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F028DF17278ECC9500BBD316 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,11 +103,21 @@
 			path = TimerTests;
 			sourceTree = "<group>";
 		};
+		F028DF1B278ECC9500BBD316 /* TimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F028DF1C278ECC9500BBD316 /* TimerUITests.swift */,
+				F028DF1E278ECC9500BBD316 /* TimerUITestsLaunchTests.swift */,
+			);
+			path = TimerUITests;
+			sourceTree = "<group>";
+		};
 		F06743232781FC6F00488A5C = {
 			isa = PBXGroup;
 			children = (
 				F067432E2781FC6F00488A5C /* Timer */,
 				F028DF0A27888A4D00BBD316 /* TimerTests */,
+				F028DF1B278ECC9500BBD316 /* TimerUITests */,
 				F067432D2781FC6F00488A5C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +127,7 @@
 			children = (
 				F067432C2781FC6F00488A5C /* Timer.app */,
 				F028DF0927888A4D00BBD316 /* TimerTests.xctest */,
+				F028DF1A278ECC9500BBD316 /* TimerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +211,24 @@
 			productReference = F028DF0927888A4D00BBD316 /* TimerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F028DF19278ECC9500BBD316 /* TimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F028DF24278ECC9500BBD316 /* Build configuration list for PBXNativeTarget "TimerUITests" */;
+			buildPhases = (
+				F028DF16278ECC9500BBD316 /* Sources */,
+				F028DF17278ECC9500BBD316 /* Frameworks */,
+				F028DF18278ECC9500BBD316 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F028DF21278ECC9500BBD316 /* PBXTargetDependency */,
+			);
+			name = TimerUITests;
+			productName = TimerUITests;
+			productReference = F028DF1A278ECC9500BBD316 /* TimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F067432B2781FC6F00488A5C /* Timer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F067433B2781FC7000488A5C /* Build configuration list for PBXNativeTarget "Timer" */;
@@ -212,6 +260,10 @@
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = F067432B2781FC6F00488A5C;
 					};
+					F028DF19278ECC9500BBD316 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = F067432B2781FC6F00488A5C;
+					};
 					F067432B2781FC6F00488A5C = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -232,12 +284,20 @@
 			targets = (
 				F067432B2781FC6F00488A5C /* Timer */,
 				F028DF0827888A4D00BBD316 /* TimerTests */,
+				F028DF19278ECC9500BBD316 /* TimerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F028DF0727888A4D00BBD316 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F028DF18278ECC9500BBD316 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,6 +326,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F028DF16278ECC9500BBD316 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F028DF1F278ECC9500BBD316 /* TimerUITestsLaunchTests.swift in Sources */,
+				F028DF1D278ECC9500BBD316 /* TimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F06743282781FC6F00488A5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +356,11 @@
 			isa = PBXTargetDependency;
 			target = F067432B2781FC6F00488A5C /* Timer */;
 			targetProxy = F028DF0D27888A4D00BBD316 /* PBXContainerItemProxy */;
+		};
+		F028DF21278ECC9500BBD316 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F067432B2781FC6F00488A5C /* Timer */;
+			targetProxy = F028DF20278ECC9500BBD316 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -334,6 +408,50 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timer.app/Contents/MacOS/Timer";
+			};
+			name = Release;
+		};
+		F028DF22278ECC9500BBD316 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QMW26WR72K;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.TimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Timer;
+			};
+			name = Debug;
+		};
+		F028DF23278ECC9500BBD316 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QMW26WR72K;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.TimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Timer;
 			};
 			name = Release;
 		};
@@ -520,6 +638,15 @@
 			buildConfigurations = (
 				F028DF0F27888A4D00BBD316 /* Debug */,
 				F028DF1027888A4D00BBD316 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F028DF24278ECC9500BBD316 /* Build configuration list for PBXNativeTarget "TimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F028DF22278ECC9500BBD316 /* Debug */,
+				F028DF23278ECC9500BBD316 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
