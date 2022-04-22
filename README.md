@@ -14,4 +14,6 @@
 - macOS 12.0+ required
 - Architecture: Universal (Intel & Apple Silicon)
 
+### Contributing
 
+We appreciate your help!
