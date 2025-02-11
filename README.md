@@ -4,7 +4,7 @@
 </div>
 <br>
 
-### Timer is a minimalistic macOS application, inspired by iOS Clock, designed and developed by Arman Abkar.
+### Timer is a minimalistic macOS application, inspired by iOS Clock, designed and developed by Arman.
 
 ![screenshot](https://user-images.githubusercontent.com/58145413/148502520-718d1f71-fffa-4944-af50-3c0f0f90ccc9.png)
 
